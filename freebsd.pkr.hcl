@@ -197,4 +197,9 @@ build {
     script = "resources/cleanup.sh"
     execute_command = "chmod +x {{ .Path }}; env {{ .Vars }} {{ .Path }}"
   }
+
+  provisioner "shell" {
+    script = "screen/build.sh"
+  }
+
 }

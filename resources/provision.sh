@@ -116,13 +116,20 @@ install_local_package() {
 
 install_extra_packages() {
   if upstream_pkg_site_available; then
-    ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync
+    ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync gmake print/texinfo git autoconf indexinfo automake
   else
     bootstrap_pkg
     install_local_package sudo
     install_local_package bash
     install_local_package curl
     install_local_package rsync
+    install_local_package gmake
+    install_local_package print/texinfo
+    install_local_package git
+    install_local_package autoconf
+    install_local_package indexinfo
+    install_local_package automake
+
   fi
 }
 
